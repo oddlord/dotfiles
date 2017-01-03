@@ -11,7 +11,7 @@ add_repos() {
     execute \
 	    "sudo add-apt-repository ppa:webupd8team/atom -y" \
 	    "Atom (WebUpd8 team)"
-		
+
 }
 
 install_apps() {
@@ -40,7 +40,7 @@ install_apps() {
 	install_package "Atom" "atom"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-	
+
     if ! package_is_installed "google-chrome-stable"; then
 
         add_key "https://dl-ssl.google.com/linux/linux_signing_key.pub" \
@@ -74,10 +74,14 @@ install_apps() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+    install_package "Jekyll" "jekyll"
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
     install_package "VLC" "vlc"
-	
+
 	# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-	
+
     install_package "xclip" "xclip"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -87,11 +91,11 @@ install_apps() {
 main() {
 
     print_in_purple "\n • Installs\n\n"
-	
+
 	print_in_purple "   Repositories\n\n"
-	
+
 	add_repos
-	
+
     print_in_purple "\n   Miscellaneous\n\n"
 
     update

@@ -107,7 +107,7 @@
     abbrev = 12
     attributesfile = ~/.gitattributes
     autocrlf = input
-    editor = vim
+    editor = atom --wait
     excludesfile = ~/.gitignore
 
 [diff "bin"]
