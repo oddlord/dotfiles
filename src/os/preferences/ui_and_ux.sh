@@ -30,7 +30,7 @@ execute "gsettings set org.gnome.libgnomekbd.keyboard layouts \"[ 'es' ]\"" \
 execute "gsettings set com.canonical.Unity.Launcher favorites \"[
             'ubiquity.desktop',
             'org.gnome.Nautilus.desktop',
-			'google-chrome-stable.desktop',
+			'google-chrome.desktop',
 			'firefox.desktop',
 			'atom.desktop',
 			'org.gnome.Terminal.desktop',
