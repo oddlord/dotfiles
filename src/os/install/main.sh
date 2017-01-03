@@ -10,7 +10,7 @@ add_repos() {
 
     execute \
 	    "sudo add-apt-repository ppa:webupd8team/atom -y" \
-	    "Atom repo"
+	    "Atom (WebUpd8 team)"
 		
 }
 
@@ -74,10 +74,6 @@ install_apps() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    install_package "ShellCheck" "shellcheck"
-
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
     install_package "VLC" "vlc"
 
 }
@@ -90,7 +86,7 @@ main() {
 	
 	add_repos
 	
-    print_in_purple "   Miscellaneous\n\n"
+    print_in_purple "\n   Miscellaneous\n\n"
 
     update
     upgrade
