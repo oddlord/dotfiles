@@ -28,7 +28,8 @@ execute "gsettings set org.gnome.libgnomekbd.keyboard layouts \"[ 'es' ]\"" \
     "Set keyboard languages"
 
 execute "gsettings set com.canonical.Unity.Launcher favorites \"[
-            'nautilus-home.desktop',
+            'ubiquity.desktop',
+            'org.gnome.Nautilus.desktop',
 			'google-chrome-stable.desktop',
 			'firefox.desktop',
 			'atom.desktop',
