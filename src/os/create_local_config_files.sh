@@ -48,20 +48,6 @@ create_gitconfig_local() {
 
 }
 
-create_vimrc_local() {
-
-    declare -r FILE_PATH="$HOME/.vimrc.local"
-
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-    if [ ! -e "$FILE_PATH" ]; then
-        printf "" >> "$FILE_PATH"
-    fi
-
-    print_result $? "$FILE_PATH"
-
-}
-
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 main() {
@@ -70,7 +56,6 @@ main() {
 
     create_bash_local
     create_gitconfig_local
-    create_vimrc_local
 
 }
 

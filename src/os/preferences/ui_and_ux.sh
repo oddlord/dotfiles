@@ -24,11 +24,20 @@ execute "gsettings set com.canonical.indicator.datetime custom-time-format '%l:%
 execute "gsettings set org.gnome.desktop.background picture-options 'stretched'" \
     "Set desktop background image options"
 
-execute "gsettings set org.gnome.libgnomekbd.keyboard layouts \"[ 'us', 'ro' ]\"" \
+execute "gsettings set org.gnome.libgnomekbd.keyboard layouts \"[ 'es' ]\"" \
     "Set keyboard languages"
 
 execute "gsettings set com.canonical.Unity.Launcher favorites \"[
-            'ubiquity-gtkui.desktop',
-            'nautilus-home.desktop'
+            'nautilus-home.desktop',
+			'google-chrome-stable.desktop',
+			'firefox.desktop',
+			'atom.desktop',
+			'org.gnome.Terminal.desktop',
+			'unity-control-center.desktop'
          ]\"" \
     "Set Launcher favorites"
+
+# http://askubuntu.com/questions/260510/how-do-i-turn-on-workspaces-why-do-i-only-have-one-workspace
+execute "gsettings set org.compiz.core:/org/compiz/profiles/unity/plugins/core/ hsize 2 && \
+         gsettings set org.compiz.core:/org/compiz/profiles/unity/plugins/core/ vsize 2" \
+    "Enable workspaces"
