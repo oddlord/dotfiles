@@ -1,0 +1,7 @@
+"*":
+  core:
+    telemetryConsent: "no"
+  editor:
+    softWrap: true
+  welcome:
+    showOnStartup: false

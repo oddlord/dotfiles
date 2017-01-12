@@ -5,9 +5,42 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+create_symlink() {
+
+  if [ ! -e "$1" ] || $skipQuestions; then
+
+      execute \
+          "ln -fs $2 $1" \
+          "$1 → $2"
+
+  elif [ "$(readlink "$1")" == "$2" ]; then
+      print_success "$1 → $2"
+  else
+
+      if ! $skipQuestions; then
+
+          ask_for_confirmation "'$1' already exists, do you want to overwrite it?"
+          if answer_is_yes; then
+
+              rm -rf "$1"
+
+              execute \
+                  "ln -fs $2 $1" \
+                  "$1 → $2"
+
+          else
+              print_error "$1 → $2"
+          fi
+
+      fi
+
+  fi
+
+}
+
 create_symlinks() {
 
-    declare -a FILES_TO_SYMLINK=(
+    declare -a HOME_FILES_TO_SYMLINK=(
 
         "shell/bash_aliases"
         "shell/bash_autocomplete"
@@ -25,6 +58,14 @@ create_symlinks() {
         "git/gitconfig"
         "git/gitignore"
 
+        "atom/config.cson"
+
+    )
+
+    declare -a ATOM_FILES_TO_SYMLINK=(
+
+        "config.cson"
+
     )
 
     local i=""
@@ -39,39 +80,21 @@ create_symlinks() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    for i in "${FILES_TO_SYMLINK[@]}"; do
+    for i in "${HOME_FILES_TO_SYMLINK[@]}"; do
 
         sourceFile="$(cd .. && pwd)/$i"
         targetFile="$HOME/.$(printf "%s" "$i" | sed "s/.*\/\(.*\)/\1/g")"
 
-        if [ ! -e "$targetFile" ] || $skipQuestions; then
+        create_symlink "$targetFile" "$sourceFile"
 
-            execute \
-                "ln -fs $sourceFile $targetFile" \
-                "$targetFile → $sourceFile"
+    done
 
-        elif [ "$(readlink "$targetFile")" == "$sourceFile" ]; then
-            print_success "$targetFile → $sourceFile"
-        else
+    for i in "${ATOM_FILES_TO_SYMLINK[@]}"; do
 
-            if ! $skipQuestions; then
+        sourceFile="$(cd .. && pwd)/atom/$i"
+        targetFile="$HOME/.atom/$(printf "%s" "$i" | sed "s/.*\/\(.*\)/\1/g")"
 
-                ask_for_confirmation "'$targetFile' already exists, do you want to overwrite it?"
-                if answer_is_yes; then
-
-                    rm -rf "$targetFile"
-
-                    execute \
-                        "ln -fs $sourceFile $targetFile" \
-                        "$targetFile → $sourceFile"
-
-                else
-                    print_error "$targetFile → $sourceFile"
-                fi
-
-            fi
-
-        fi
+        create_symlink "$targetFile" "$sourceFile"
 
     done
 
