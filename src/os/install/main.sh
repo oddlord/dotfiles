@@ -9,16 +9,16 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 add_repos() {
 
     execute \
-	    "sudo add-apt-repository ppa:webupd8team/atom -y" \
-	    "Atom (WebUpd8 team)"
+        "sudo add-apt-repository ppa:webupd8team/atom -y" \
+        "Atom (WebUpd8 team)"
 
 }
 
 install_atom_packages() {
 
     execute \
-	    "apm install editorconfig" \
-	    "EditorConfig"
+        "apm install editorconfig" \
+        "EditorConfig"
 
 }
 
@@ -45,11 +45,11 @@ install_apps() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-	install_package "Java (JDK)" "default-jdk"
+    install_package "Java (JDK)" "default-jdk"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-	install_package "Atom" "atom"
+    install_package "Atom" "atom"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -92,7 +92,7 @@ install_apps() {
 
     install_package "VLC" "vlc"
 
-	# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     install_package "xclip" "xclip"
 
@@ -104,9 +104,9 @@ main() {
 
     print_in_purple "\n • Installs\n\n"
 
-	  print_in_purple "   Repositories\n\n"
+    print_in_purple "   Repositories\n\n"
 
-	  add_repos
+    add_repos
 
     print_in_purple "\n   Miscellaneous\n\n"
 
