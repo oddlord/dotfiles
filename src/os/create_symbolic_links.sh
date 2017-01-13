@@ -62,7 +62,7 @@ create_symlinks() {
 
     )
 
-    local atom_home = "$HOME/.atom"
+    local atom_home="$HOME/.atom"
 
     declare -a ATOM_FILES_TO_SYMLINK=(
 
