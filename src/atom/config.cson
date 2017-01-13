@@ -1,6 +1,10 @@
 "*":
   core:
     telemetryConsent: "no"
+    themes: [
+      "atom-dark-ui"
+      "atom-dark-syntax"
+    ]
   editor:
     softWrap: true
   welcome:
