@@ -37,6 +37,10 @@ install_apps() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+	install_package "Java (JDK)" "default-jdk"
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 	install_package "Atom" "atom"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
