@@ -38,7 +38,11 @@ execute "gsettings set com.canonical.Unity.Launcher favorites \"[
          ]\"" \
     "Set Launcher favorites"
 
-# http://askubuntu.com/questions/260510/how-do-i-turn-on-workspaces-why-do-i-only-have-one-workspace
+execute "gsettings set org.gnome.desktop.session idle-delay 0 && \
+         gsettings set org.gnome.desktop.screensaver lock-enabled false && \
+         gsettings set org.gnome.desktop.lockdown disable-lock-screen true" \
+    "Disable screen blackout & lock"
+
 execute "gsettings set org.compiz.core:/org/compiz/profiles/unity/plugins/core/ hsize 2 && \
          gsettings set org.compiz.core:/org/compiz/profiles/unity/plugins/core/ vsize 2" \
     "Enable workspaces"
