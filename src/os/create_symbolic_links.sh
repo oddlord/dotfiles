@@ -62,6 +62,8 @@ create_symlinks() {
 
     )
 
+    atom_home = "$HOME/.atom"
+
     declare -a ATOM_FILES_TO_SYMLINK=(
 
         "config.cson"
@@ -89,10 +91,16 @@ create_symlinks() {
 
     done
 
+    if [ ! -d "$atom_home" ]; then
+        execute \
+            "mkdir $atom_home" \
+            "Create directory $atom_home"
+    fi
+
     for i in "${ATOM_FILES_TO_SYMLINK[@]}"; do
 
         sourceFile="$(cd .. && pwd)/atom/$i"
-        targetFile="$HOME/.atom/$(printf "%s" "$i" | sed "s/.*\/\(.*\)/\1/g")"
+        targetFile="$atom_home/$(printf "%s" "$i" | sed "s/.*\/\(.*\)/\1/g")"
 
         create_symlink "$targetFile" "$sourceFile"
 
