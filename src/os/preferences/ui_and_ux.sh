@@ -34,6 +34,7 @@ execute "gsettings set com.canonical.Unity.Launcher favorites \"[
 			'firefox.desktop',
 			'atom.desktop',
 			'org.gnome.Terminal.desktop',
+      'application://gimp.desktop',
 			'unity-control-center.desktop'
          ]\"" \
     "Set Launcher favorites"
