@@ -20,6 +20,10 @@ install_atom_packages() {
         "apm install editorconfig" \
         "EditorConfig"
 
+    execute \
+        "apm install autoclose-html" \
+        "Auto Close HTML"
+
 }
 
 install_apps() {

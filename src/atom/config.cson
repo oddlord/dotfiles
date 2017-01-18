@@ -1,4 +1,10 @@
 "*":
+  "autoclose-html":
+    forceInline: [
+      "*"
+    ]
+  "autocomplete-plus":
+    confirmCompletion: "enter"
   core:
     telemetryConsent: "no"
     themes: [
