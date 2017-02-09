@@ -53,6 +53,10 @@ install_apps() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+    install_package "Eclipse" "eclipse"
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
     install_package "Atom" "atom"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
