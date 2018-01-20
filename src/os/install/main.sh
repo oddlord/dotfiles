@@ -14,18 +14,6 @@ add_repos() {
 
 }
 
-install_atom_packages() {
-
-    execute \
-        "apm install editorconfig" \
-        "EditorConfig"
-
-    execute \
-        "apm install autoclose-html" \
-        "Auto Close HTML"
-
-}
-
 install_apps() {
 
     # Install tools for compiling/building software from source.
@@ -50,6 +38,9 @@ install_apps() {
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     install_package "Java (JDK)" "default-jdk"
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    install_package "Python pip" "python-pip"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -105,15 +96,26 @@ install_apps() {
     install_package "xclip" "xclip"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+}
 
+install_python_packages() {
+
+    install_python_package "pip" "pip"
+
+    install_python_package "Virtualenv" "virtualenv"
+}
+
+install_atom_packages() {
+
+    install_atom_package "EditorConfig" "editorconfig"
+
+    install_atom_package "Auto Close HTML" "autoclose-html"
 }
 
 main() {
-
     print_in_purple "\n • Installs\n\n"
 
     print_in_purple "   Repositories\n\n"
-
     add_repos
 
     print_in_purple "\n   Miscellaneous\n\n"
@@ -125,8 +127,10 @@ main() {
     printf "\n"
     autoremove
 
-    print_in_purple "\n   Atom packages\n\n"
+    print_in_purple "\n   Python packages\n\n"
+    install_python_packages
 
+    print_in_purple "\n   Atom packages\n\n"
     install_atom_packages
 }
 

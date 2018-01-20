@@ -148,7 +148,7 @@ extract() {
 
 verify_os() {
 
-    declare -r MINIMUM_UBUNTU_VERSION="14.04"
+    declare -r MINIMUM_UBUNTU_VERSION="16.04"
 
     local os_name=""
     local os_version=""

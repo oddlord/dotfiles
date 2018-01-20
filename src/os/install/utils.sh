@@ -32,6 +32,10 @@ autoremove() {
 
 }
 
+package_is_installed() {
+    dpkg -s "$1" &> /dev/null
+}
+
 install_package() {
 
     declare -r PACKAGE="$2"
@@ -47,8 +51,20 @@ install_package() {
 
 }
 
-package_is_installed() {
-    dpkg -s "$1" &> /dev/null
+install_python_package() {
+
+    declare -r PACKAGE="$2"
+    declare -r PACKAGE_READABLE_NAME="$1"
+
+    execute "sudo pip install --upgrade $PACKAGE" "$PACKAGE_READABLE_NAME"
+}
+
+install_atom_package() {
+
+    declare -r PACKAGE="$2"
+    declare -r PACKAGE_READABLE_NAME="$1"
+
+    execute "apm install $PACKAGE" "$PACKAGE_READABLE_NAME"
 }
 
 update() {
