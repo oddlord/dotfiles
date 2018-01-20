@@ -98,18 +98,18 @@ install_apps() {
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 }
 
-install_python_packages() {
-
-    install_python_package "pip" "pip"
-
-    install_python_package "Virtualenv" "virtualenv"
-}
-
 install_atom_packages() {
 
     install_atom_package "EditorConfig" "editorconfig"
 
     install_atom_package "Auto Close HTML" "autoclose-html"
+}
+
+install_python_packages() {
+
+    install_python_package "pip" "pip"
+
+    install_python_package "Virtualenv" "virtualenv"
 }
 
 main() {
