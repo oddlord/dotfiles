@@ -17,6 +17,13 @@ add_ppa() {
     sudo add-apt-repository -y ppa:"$1" &> /dev/null
 }
 
+add_repo() {
+    declare -r REPO="$2"
+    declare -r REPO_READABLE_NAME="$1"
+
+    execute "sudo add-apt-repository -y $REPO" "$REPO_READABLE_NAME"
+}
+
 add_to_source_list() {
     sudo sh -c "printf 'deb $1' >> '/etc/apt/sources.list.d/$2'"
 }

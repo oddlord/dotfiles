@@ -8,10 +8,8 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 
 add_repos() {
 
-    execute \
-        "sudo add-apt-repository ppa:webupd8team/atom -y" \
-        "Atom (WebUpd8 team)"
-
+    add_repo "Atom (WebUpd8 team)" "ppa:webupd8team/atom"
+    add_repo "Git (git-core)" "ppa:git-core/ppa"
 }
 
 install_apps() {
@@ -38,9 +36,14 @@ install_apps() {
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     install_package "Java (JDK)" "default-jdk"
+
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     install_package "Python pip" "python-pip"
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    install_package "Git" "git"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -78,10 +81,6 @@ install_apps() {
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     install_package "GIMP" "gimp"
-
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-    install_package "Git" "git"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
