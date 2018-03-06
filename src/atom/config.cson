@@ -12,6 +12,7 @@
       "atom-dark-syntax"
     ]
   editor:
+    showInvisibles: true
     softWrap: true
   welcome:
     showOnStartup: false
