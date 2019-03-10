@@ -4,6 +4,9 @@ These are the base dotfiles that I start with when I set up a
 new Ubuntu environment. For more specific local needs I use the `.local`
 files described in the [`Local Settings`](#local-settings) section.
 
+## Version
+
+Currently working for Ubuntu version 16.04 only.
 
 ## Setup
 
